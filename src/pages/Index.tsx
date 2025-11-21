@@ -4,24 +4,30 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import { toast } from "sonner";
 import { X } from "lucide-react";
 import { FaMapSigns, FaTaxi, FaWifi, FaParking, FaSnowflake, FaUtensils, FaCoffee, FaDumbbell, FaSwimmingPool, FaConciergeBell, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
-import hero1 from "@/assets/hero-1.jpeg";
-import hero2 from "@/assets/hero-2.jpeg";
-import deluxeBalcony from "@/assets/deluxe-balcony.jpeg";
-import deluxeBalcony2 from "@/assets/deluxe-balcony-2.jpg";
-import deluxeBalcony3 from "@/assets/deluxe-balcony-3.jpeg";
-import deluxeBalcony4 from "@/assets/deluxe-balcony-4.jpg";
-import deluxeBalcony5 from "@/assets/deluxe-balcony-5.jpg";
-import executiveBalcony from "@/assets/executive-balcony.jpeg";
-import executiveBalcony2 from "@/assets/executive-balcony-2.jpeg";
-import executiveBalcony3 from "@/assets/executive-balcony-3.jpeg";
-import executiveBalcony4 from "@/assets/executive-balcony-4.jpeg";
-import executiveBalcony5 from "@/assets/executive-balcony-5.jpg";
-import familyBalcony from "@/assets/family-balcony.jpg";
-import familyBalcony2 from "@/assets/family-balcony-2.jpg";
-import familyBalcony3 from "@/assets/family-balcony-3.jpg";
-import familyBalcony4 from "@/assets/family-balcony-4.jpg";
-import familyBalcony5 from "@/assets/family-balcony-5.jpg";
-import presidentialBalcony from "@/assets/presidential-balcony.jpg";
+
+import hero1 from "@/assets/hero_1.jpeg";
+import hero2 from "@/assets/hero_2.jpeg";
+import hero3 from "@/assets/hero_3.jpeg";
+
+import deluxeBalcony from "@/assets/IMG_5812.jpeg";
+import deluxeBalcony2 from "@/assets/IMG_5809.jpeg";
+import deluxeBalcony3 from "@/assets/IMG_5806.jpeg";
+import deluxeBalcony4 from "@/assets/IMG_5813.jpeg";
+import deluxeBalcony5 from "@/assets/IMG_5816.jpeg";
+
+import executiveBalcony from "@/assets/room_1.jpeg";
+import executiveBalcony2 from "@/assets/room_2.jpeg";
+import executiveBalcony3 from "@/assets/room_3.jpeg";
+import executiveBalcony4 from "@/assets/room_4.jpeg";
+import executiveBalcony5 from "@/assets/room_5.jpeg";
+
+import familyBalcony from "@/assets/room_4.jpeg";
+import familyBalcony2 from "@/assets/room_2.jpeg";
+import familyBalcony3 from "@/assets/room_3.jpeg";
+import familyBalcony4 from "@/assets/room_1.jpeg";
+import familyBalcony5 from "@/assets/room_5.jpeg";
+
+import presidentialBalcony from "@/assets/hero_3.jpeg";
 
 
 import RoomCarousel from "@/components/RoomCarousel";
@@ -238,15 +244,20 @@ const Index = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
       {
-        image: hero1,
-        title: "Welcome to Luxury",
-        subtitle: "Experience Elegance at DJ Palace",
-      },
-      {
-        image: hero2,
-        title: "Unparalleled Comfort",
-        subtitle: "Where Sophistication Meets Hospitality",
-      },
+  image: hero1,
+  title: "Welcome to Luxury",
+  subtitle: "Experience Elegance at DJ Palace",
+},
+{
+  image: hero2,
+  title: "Unparalleled Comfort",
+  subtitle: "Where Sophistication Meets Hospitality",
+},
+{
+  image: hero3,
+  title: "A Perfect Stay Awaits",
+  subtitle: "Relax • Refresh • Rejuvenate",
+},
     ];
 
     useEffect(() => {
