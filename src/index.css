@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* White + Gold Luxury Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;              /* Pure white */
+    --background-end: 40 25% 98%;         /* Very light warm gold tint */
+    --foreground: 240 10% 10%;            /* Dark charcoal */
+
+    --card: 0 0% 100%;                    /* White cards */
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 43 65% 52%;                /* Classic gold */
+    --primary-glow: 43 80% 60%;           /* Brighter gold */
+    --primary-foreground: 240 10% 10%;
+
+    --secondary: 0 0% 96%;                /* Subtle soft-white */
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 0 0% 90%;                    /* Light-muted grey */
+    --muted-foreground: 240 5% 40%;
+
+    --accent: 43 65% 52%;                 /* Gold */
+    --accent-foreground: 240 10% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 43 40% 80%;                 /* Soft gold border */
+    --input: 43 40% 80%;
+    --ring: 43 65% 52%;                   /* Gold ring */
+
+    --radius: 0.5rem;
+
+    /* Gold Gradient */
+    --gradient-purple-gold: linear-gradient(
+      135deg,
+      hsl(43, 65%, 60%),
+      hsl(43, 70%, 50%),
+      hsl(43, 80%, 70%)
+    );
+
+    --gradient-dark: linear-gradient(
+      180deg,
+      hsl(var(--background)),
+      hsl(var(--background-end))
+    );
+
+    /* Glow */
+    --glow-purple: 0 0 35px hsl(43 70% 55% / 0.35); /* Gold glow */
+    --glow-gold: 0 0 45px hsl(43 80% 60% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)),
+      hsl(var(--background-end))
+    );
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-purple-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
+  .glow-gold {
+    box-shadow: var(--glow-gold);
+  }
+
+  .hover-glow-purple {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow-purple:hover {
+    box-shadow: var(--glow-purple);
+    transform: translateY(-2px);
+  }
+
+  .hover-glow-gold {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow-gold:hover {
+    box-shadow: var(--glow-gold);
+    transform: translateY(-2px);
+  }
+}
