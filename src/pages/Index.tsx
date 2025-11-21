@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { toast } from "sonner";
 import { X } from "lucide-react";
-import { FaMapSigns, FaTaxi, FaWifi, FaParking, FaSnowflake, FaUtensils, FaCoffee, FaDumbbell, FaSwimmingPool, FaConciergeBell, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaBreadSlice,FaMapSigns, FaTaxi, FaWifi, FaParking, FaSnowflake, FaUtensils, FaCoffee, FaDumbbell, FaSwimmingPool, FaConciergeBell, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 import hero1 from "@/assets/hero_1.jpeg";
 import hero2 from "@/assets/hero_2.jpeg";
@@ -501,9 +501,8 @@ const Index = () => {
       { icon: FaWifi, title: "High-Speed Wi-Fi", description: "Complimentary high-speed internet throughout the property" },
       { icon: FaParking, title: "Free Parking", description: "Secure parking facilities for all guests" },
       { icon: FaSnowflake, title: "Air Conditioning", description: "Climate-controlled rooms for optimal comfort" },
-      { icon: FaMapSigns, title: "Guide Available", description: "Experienced guides available for local sightseeing." },
-      { icon: FaCoffee, title: "Coffee Day", description: "Coffee Day Coffee Available not Cafe" },
-      { icon: FaTaxi, title: "Cab Available", description: "24/7 Cab available" },
+      
+      { icon: FaBreadSlice, title: "Breakfast", description: "complementry Breakfast available" },
     ];
 
     return (
