@@ -5,7 +5,7 @@ import Booking from "./pages/Booking";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
-
+ 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter basename="/DJ-Palace-Residency">

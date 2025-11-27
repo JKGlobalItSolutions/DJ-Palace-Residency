@@ -2,61 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* White + Gold Luxury Theme */
+/* Modern Luxury DARK Hotel Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;              /* Pure white */
-    --background-end: 40 25% 98%;         /* Very light warm gold tint */
-    --foreground: 240 10% 10%;            /* Dark charcoal */
-
-    --card: 0 0% 100%;                    /* White cards */
-    --card-foreground: 240 10% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
-
-    --primary: 43 65% 52%;                /* Classic gold */
-    --primary-glow: 43 80% 60%;           /* Brighter gold */
-    --primary-foreground: 240 10% 10%;
-
-    --secondary: 0 0% 96%;                /* Subtle soft-white */
-    --secondary-foreground: 240 10% 10%;
-
-    --muted: 0 0% 90%;                    /* Light-muted grey */
-    --muted-foreground: 240 5% 40%;
-
-    --accent: 43 65% 52%;                 /* Gold */
-    --accent-foreground: 240 10% 10%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 43 40% 80%;                 /* Soft gold border */
-    --input: 43 40% 80%;
-    --ring: 43 65% 52%;                   /* Gold ring */
-
-    --radius: 0.5rem;
-
-    /* Gold Gradient */
-    --gradient-purple-gold: linear-gradient(
+    /* Backgrounds */
+    --background: 225 15% 8%;                 /* Deep black */
+    --background-secondary: 225 12% 12%;      /* Dark charcoal */
+    --background-gradient: linear-gradient(
       135deg,
-      hsl(43, 65%, 60%),
-      hsl(43, 70%, 50%),
-      hsl(43, 80%, 70%)
+      hsl(225 15% 8%) 0%,
+      hsl(225 15% 12%) 50%,
+      hsl(225 10% 16%) 100%
     );
 
-    --gradient-dark: linear-gradient(
-      180deg,
-      hsl(var(--background)),
-      hsl(var(--background-end))
+    /* Text */
+    --foreground: 0 0% 98%;                    /* Pure white */
+    --foreground-secondary: 0 0% 75%;          /* Soft grey */
+    --foreground-muted: 0 0% 60%;              /* Muted grey */
+
+    /* Metallic Bronze / Gold */
+    --primary: 32 65% 55%;                     /* Bronze */
+    --primary-hover: 32 70% 62%;               /* Brighter bronze */
+    --primary-active: 32 60% 45%;              /* Deep bronze */
+    --primary-foreground: 0 0% 10%;
+
+    /* Soft Gold Accent */
+    --accent: 38 70% 65%;                      /* Soft gold */
+    --accent-foreground: 0 0% 10%;
+
+    /* Card */
+    --card: 225 15% 10%;
+    --card-foreground: 0 0% 98%;
+    --card-border: 32 25% 30%;                 /* Bronze-ish border */
+    --card-shadow: 0 4px 30px hsl(32 30% 20% / 0.25);
+    --card-shadow-hover: 0 8px 50px hsl(32 40% 30% / 0.35);
+
+    /* Buttons */
+    --secondary: 225 10% 20%;
+    --secondary-hover: 225 12% 24%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Inputs */
+    --input: 225 12% 18%;                      /* Dark */
+    --input-focus: 32 65% 55%;                 /* Bronze border */
+    --ring: 32 70% 55%;                        /* Bronze ring */
+
+    /* Borders */
+    --border: 225 10% 25%;
+    --border-light: 225 10% 30%;
+
+    /* Radius */
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(32 70% 60%) 0%,
+      hsl(32 65% 55%) 50%,
+      hsl(32 60% 45%) 100%
     );
 
-    /* Glow */
-    --glow-purple: 0 0 35px hsl(43 70% 55% / 0.35); /* Gold glow */
-    --glow-gold: 0 0 45px hsl(43 80% 60% / 0.4);
+    /* Metallic glow */
+    --glow-primary: 0 0 35px hsl(32 70% 55% / 0.35);
+    --glow-primary-strong: 0 0 60px hsl(32 70% 60% / 0.45);
+
+    /* Text glow */
+    --text-gradient: linear-gradient(
+      135deg,
+      hsl(32 80% 70%) 0%,
+      hsl(32 70% 60%) 50%,
+      hsl(32 60% 50%) 100%
+    );
+    --text-shadow: 0 3px 12px hsl(32 70% 50% / 0.4);
   }
 }
+
 
 @layer base {
   * {
@@ -65,46 +88,90 @@
 
   body {
     @apply text-foreground;
-    background: linear-gradient(
-      180deg,
-      hsl(var(--background)),
-      hsl(var(--background-end))
-    );
+    background: var(--background-gradient);
     background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  *:focus-visible {
+    outline: 2px solid hsl(190 95% 55%);
+    outline-offset: 3px;
+    border-radius: var(--radius);
   }
 }
 
 @layer utilities {
+  /* Gradient Text */
   .gradient-text {
-    background: var(--gradient-purple-gold);
-    -webkit-background-clip: text;
+    background: var(--text-gradient);
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+    text-shadow: var(--text-shadow);
   }
 
-  .glow-purple {
-    box-shadow: var(--glow-purple);
+  /* Card Styles */
+  .card-luxury {
+    background: var(--gradient-card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s ease;
+    position: relative;
   }
 
-  .glow-gold {
-    box-shadow: var(--glow-gold);
+  .card-luxury:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: hsl(190 95% 55% / 0.4);
   }
 
-  .hover-glow-purple {
-    transition: all 0.3s ease;
+  /* Button Styles */
+  .btn-luxury {
+    background: var(--gradient-primary);
+    color: var(--primary-foreground);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: 0.3s ease;
   }
 
-  .hover-glow-purple:hover {
-    box-shadow: var(--glow-purple);
+  .btn-luxury:hover {
     transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
   }
 
-  .hover-glow-gold {
-    transition: all 0.3s ease;
+  .btn-luxury:active {
+    transform: translateY(0);
+    box-shadow: var(--glow-primary);
   }
 
-  .hover-glow-gold:hover {
-    box-shadow: var(--glow-gold);
-    transform: translateY(-2px);
+  /* Inputs */
+  .input-luxury {
+    background: hsl(225 20% 5%);
+    border: 1px solid var(--border-light);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    transition: all 0.25s ease;
+    color: white;
+  }
+
+  .input-luxury:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px hsl(190 95% 60% / 0.2);
+    outline: none;
   }
 }
