@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
 
-  base: "/",
+  base: "/DJ-Palace-Residency/",
 
   plugins: [
     react(),
