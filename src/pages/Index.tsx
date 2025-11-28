@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { X } from "lucide-react";
 import { FaBreadSlice,FaMapSigns, FaTaxi, FaWifi, FaParking, FaSnowflake, FaUtensils, FaCoffee, FaDumbbell, FaSwimmingPool, FaConciergeBell, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
+import logo from "/public/logo.jpeg";
 import hero1 from "@/assets/hero_1.jpeg";
 import hero2 from "@/assets/hero_2.jpeg";
 import hero3 from "@/assets/hero_3.jpeg";
@@ -141,7 +142,7 @@ const Index = () => {
 >
   {/* Small Logo */}
   <img
-    src="/logo.jpeg"
+    src={logo}
     alt="DJ Palace Logo "
     className="w-10 h-10 rounded-full"   // SMALLER LOGO
   />
