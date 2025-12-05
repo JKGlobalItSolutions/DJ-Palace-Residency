@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { toast } from "sonner";
 import { X } from "lucide-react";
@@ -36,7 +35,6 @@ import presidentialBalcony from "@/assets/hero_3.jpeg";
 import RoomCarousel from "@/components/RoomCarousel";
 
 const Index = () => {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
   // Preloader Component
@@ -167,7 +165,7 @@ const Index = () => {
                 </button>
               ))}
               <button
-                onClick={() => scrollToSection("rooms")}
+                onClick={() => window.open('https://jkglobalitsolutions.github.io/DJ-Palace-website-dynamic-link/', '_blank')}
                 className="w-full  text-primary-foreground hover-glow-purple px-4 py-2 rounded-md transition-all duration-300"
                 // style={{backgroundColor:"#9234DB"}}
                 style={{
@@ -232,7 +230,7 @@ const Index = () => {
                 </button>
               ))}
               <button
-                onClick={() => scrollToSection("rooms")}
+                onClick={() => window.open('https://jkglobalitsolutions.github.io/DJ-Palace-website-dynamic-link/', '_blank')}
                 className="w-full  text-primary-foreground hover-glow-purple px-4 py-2 rounded-md transition-all duration-300"
                 style={{
                   backgroundColor: "#B8860B",
@@ -488,7 +486,7 @@ const Index = () => {
                       ))}
                     </div>
                     <button
-                      onClick={() => navigate('/booking')}
+                      onClick={() => window.open('https://jkglobalitsolutions.github.io/DJ-Palace-website-dynamic-link/', '_blank')}
                       className="w-full text-primary-foreground hover-glow-purple px-4 py-2 rounded-md transition-all duration-300"
                       style={{
                         backgroundColor: "#B8860B",
