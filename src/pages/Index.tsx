@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { toast } from "sonner";
 import { X } from "lucide-react";
-import { FaBreadSlice,FaMapSigns, FaTaxi, FaWifi, FaParking, FaSnowflake, FaUtensils, FaCoffee, FaDumbbell, FaSwimmingPool, FaConciergeBell, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import {FaYoutube, FaBreadSlice, FaMapSigns, FaTaxi, FaWifi, FaParking, FaSnowflake, FaUtensils, FaCoffee, FaDumbbell, FaSwimmingPool, FaConciergeBell, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 import logo from "/public/logo.jpeg";
 import hero1 from "@/assets/hero_1.jpg";
@@ -134,22 +134,22 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             <motion.div
-  whileHover={{ scale: 1.05 }}
-  className="flex items-center gap-2 cursor-pointer"
-  onClick={() => scrollToSection("hero")}
->
-  {/* Small Logo */}
-  <img
-    src={logo}
-    alt="DJ Palace Logo "
-    className="w-10 h-10 rounded-full"   // SMALLER LOGO
-  />
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => scrollToSection("hero")}
+            >
+              {/* Small Logo */}
+              <img
+                src={logo}
+                alt="DJ Palace Logo "
+                className="w-10 h-10 rounded-full"   // SMALLER LOGO
+              />
 
-  {/* Logo Text */}
-  <span className="text-xl font-bold text-yellow-500 tracking-wide">
-    DJ PALACE
-  </span>
-</motion.div>
+              {/* Logo Text */}
+              <span className="text-xl font-bold text-yellow-500 tracking-wide">
+                DJ PALACE
+              </span>
+            </motion.div>
 
 
             {/* Desktop Navigation */}
@@ -256,25 +256,25 @@ const Index = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
       {
-  image: hero1,
-  title: "Welcome to Luxury",
-  subtitle: "Experience Elegance at DJ Palace",
-},
-{
-  image: hero2,
-  title: "Unparalleled Comfort",
-  subtitle: "Where Sophistication Meets Hospitality",
-},
-{
-  image: hero3,
-  title: "A Perfect Stay Awaits",
-  subtitle: "Relax • Refresh • Rejuvenate",
-},
-{
-  image: hero4,
-  title: "Experience the Ultimate Comfort",
-  subtitle: "Relax • Enjoy • Relax",
-},
+        image: hero1,
+        title: "Welcome to Luxury",
+        subtitle: "Experience Elegance at DJ Palace",
+      },
+      {
+        image: hero2,
+        title: "Unparalleled Comfort",
+        subtitle: "Where Sophistication Meets Hospitality",
+      },
+      {
+        image: hero3,
+        title: "A Perfect Stay Awaits",
+        subtitle: "Relax • Refresh • Rejuvenate",
+      },
+      {
+        image: hero4,
+        title: "Experience the Ultimate Comfort",
+        subtitle: "Relax • Enjoy • Relax",
+      },
 
     ];
 
@@ -511,81 +511,81 @@ const Index = () => {
   };
 
   // Amenities Component
- const Amenities = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const Amenities = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const amenities = [
-    { icon: FaWifi, title: "High-Speed Wi-Fi", description: "Complimentary high-speed internet throughout the property" },
-    { icon: FaParking, title: "Free Parking", description: "Secure parking facilities for all guests" },
-    { icon: FaSnowflake, title: "Air Conditioning", description: "Climate-controlled rooms for optimal comfort" },
-    { icon: FaBreadSlice, title: "Breakfast", description: "Complementary breakfast available" },
-  ];
+    const amenities = [
+      { icon: FaWifi, title: "High-Speed Wi-Fi", description: "Complimentary high-speed internet throughout the property" },
+      { icon: FaParking, title: "Free Parking", description: "Secure parking facilities for all guests" },
+      { icon: FaSnowflake, title: "Air Conditioning", description: "Climate-controlled rooms for optimal comfort" },
+      { icon: FaBreadSlice, title: "Breakfast", description: "Complementary breakfast available" },
+    ];
 
-  return (
-    <section id="amenities" className="py-20 px-4 bg-card/50">
-      <div className="container mx-auto">
-        
-        {/* Section Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-            Amenities
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Indulge in our comprehensive range of facilities designed to make your stay
-            comfortable and memorable.
-          </p>
-        </motion.div>
+    return (
+      <section id="amenities" className="py-20 px-4 bg-card/50">
+        <div className="container mx-auto">
 
-        {/* Amenities Grid */}
-        <div
-          ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto"
-        >
-          {amenities.map((amenity, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -10 }}
-              className="bg-card border border-border rounded-lg p-6 text-center hover-glow-purple group"
-            >
-              {/* GOLD ICON */}
+          {/* Section Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+              Amenities
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Indulge in our comprehensive range of facilities designed to make your stay
+              comfortable and memorable.
+            </p>
+          </motion.div>
+
+          {/* Amenities Grid */}
+          <div
+            ref={ref}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-auto"
+          >
+            {amenities.map((amenity, index) => (
               <motion.div
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
-                style={{
-                  background: "var(--gradient-purple-gold)",
-                }}
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{ y: -10 }}
+                className="bg-card border border-border rounded-lg p-6 text-center hover-glow-purple group"
               >
-                <amenity.icon
-                  className="text-3xl"
-                  style={{ color: "#FFD700" }}   // GOLD ICON COLOR
-                />
+                {/* GOLD ICON */}
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
+                  style={{
+                    background: "var(--gradient-purple-gold)",
+                  }}
+                >
+                  <amenity.icon
+                    className="text-3xl"
+                    style={{ color: "#FFD700" }}   // GOLD ICON COLOR
+                  />
+                </motion.div>
+
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {amenity.title}
+                </h3>
+
+                <p className="text-muted-foreground text-sm">
+                  {amenity.description}
+                </p>
               </motion.div>
+            ))}
+          </div>
 
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                {amenity.title}
-              </h3>
-
-              <p className="text-muted-foreground text-sm">
-                {amenity.description}
-              </p>
-            </motion.div>
-          ))}
         </div>
-
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  };
 
   // Tours Component
   // const Tours = () => {
@@ -792,7 +792,7 @@ const Index = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">Address</h3>
                     <p className="text-muted-foreground">
-                      51,banglore to pondy NH road,<br/> Asai nagar, Samuthram, Nallavan palayam,<br/> Thiruvannamalai, Tamil Nadu 606603
+                      51,banglore to pondy NH road,<br /> Asai nagar, Samuthram, Nallavan palayam,<br /> Thiruvannamalai, Tamil Nadu 606603
                     </p>
                   </div>
                 </div>
@@ -973,14 +973,14 @@ const Index = () => {
                 <a href="#" className="w-10 h-10 rounded-full bg-secondary hover:bg-primary transition-colors flex items-center justify-center">
                   <FaFacebook className="text-foreground" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-secondary hover:bg-primary transition-colors flex items-center justify-center">
+                <a href="https://www.instagram.com/djresidency_2025?utm_source=qr&igsh=aTA4eDU2bmV1d2U2" className="w-10 h-10 rounded-full bg-secondary hover:bg-primary transition-colors flex items-center justify-center">
                   <FaInstagram className="text-foreground" />
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-secondary hover:bg-primary transition-colors flex items-center justify-center">
                   <FaTwitter className="text-foreground" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-secondary hover:bg-primary transition-colors flex items-center justify-center">
-                  <FaLinkedin className="text-foreground" />
+                <a href="https://youtube.com/@varma_aari_boutiq_vlogs?si=Lz8HnOGwAVXGVh-0" className="w-10 h-10 rounded-full bg-secondary hover:bg-primary transition-colors flex items-center justify-center">
+                  <FaYoutube className="text-foreground" />
                 </a>
               </div>
             </div>

@@ -34,14 +34,19 @@ const RoomCard: React.FC<RoomCardProps> = ({
 
   const imageArray = Array.isArray(images) ? images : [images];
 
+  // 🔥 Auto Slide Carousel (No Buttons)
   const ImageCarousel = ({ images, roomName }: { images: string[], roomName: string }) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
 
-    const nextSlide = () =>
-      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    React.useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) =>
+          prev === images.length - 1 ? 0 : prev + 1
+        );
+      }, 3000); // 3 seconds
 
-    const prevSlide = () =>
-      setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+      return () => clearInterval(interval);
+    }, [images.length]);
 
     return (
       <div
@@ -57,36 +62,8 @@ const RoomCard: React.FC<RoomCardProps> = ({
           src={images[currentIndex]}
           alt={`${roomName} ${currentIndex + 1}`}
           className="w-100 h-100"
-          style={{ objectFit: "cover", transition: "0.4s ease-in-out" }}
+          style={{ objectFit: "cover", transition: "0.6s ease-in-out" }}
         />
-        {images.length > 1 && (
-          <>
-            <button
-              className="btn btn-light position-absolute top-50 start-0 translate-middle-y rounded-circle shadow"
-              style={{
-                width: "36px",
-                height: "36px",
-                border: "none",
-                fontSize: "22px",
-              }}
-              onClick={prevSlide}
-            >
-              ‹
-            </button>
-            <button
-              className="btn btn-light position-absolute top-50 end-0 translate-middle-y rounded-circle shadow"
-              style={{
-                width: "36px",
-                height: "36px",
-                border: "none",
-                fontSize: "22px",
-              }}
-              onClick={nextSlide}
-            >
-              ›
-            </button>
-          </>
-        )}
       </div>
     );
   };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -9,9 +9,11 @@ interface RoomCarouselProps {
 
 const RoomCarousel = ({ images, roomName }: RoomCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const nextSlide = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const nextSlide = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
@@ -25,8 +27,26 @@ const RoomCarousel = ({ images, roomName }: RoomCarouselProps) => {
     setCurrentIndex(index);
   };
 
+  useEffect(() => {
+    if (images.length <= 1 || isHovered) return;
+
+    intervalRef.current = setInterval(() => {
+      nextSlide();
+    }, 4000); // Auto-slide every 4 seconds
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [currentIndex, images.length, isHovered]);
+
   return (
-    <div className="relative h-64 overflow-hidden group">
+    <div
+      className="relative h-64 overflow-hidden group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <AnimatePresence mode="wait">
         <motion.img
           key={currentIndex}
