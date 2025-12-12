@@ -5,31 +5,31 @@ import { X } from "lucide-react";
 import {FaYoutube, FaBreadSlice, FaMapSigns, FaTaxi, FaWifi, FaParking, FaSnowflake, FaUtensils, FaCoffee, FaDumbbell, FaSwimmingPool, FaConciergeBell, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 import logo from "/public/logo.jpeg";
-import hero1 from "@/assets/hero_1.jpg";
-import hero2 from "@/assets/hero_2.jpeg";
-import hero3 from "@/assets/hero_3.jpeg";
-import hero4 from "@/assets/hero_4.jpg";
+import hero1 from "/public/hero_1.jpg";
+import hero2 from "/public/hero_2.jpeg";
+import hero3 from "/public/hero_3.jpeg";
+import hero4 from "/public/hero_4.jpg";
 
 
-import deluxeBalcony from "@/assets/IMG_5812.jpeg";
-import deluxeBalcony2 from "@/assets/IMG_5809.jpeg";
-import deluxeBalcony3 from "@/assets/IMG_5806.jpeg";
-import deluxeBalcony4 from "@/assets/IMG_5813.jpeg";
-import deluxeBalcony5 from "@/assets/IMG_5816.jpeg";
+import deluxeBalcony from "/public/IMG_5812.jpeg";
+import deluxeBalcony2 from "/public/IMG_5809.jpeg";
+import deluxeBalcony3 from "/public/IMG_5806.jpeg";
+import deluxeBalcony4 from "/public/IMG_5813.jpeg";
+import deluxeBalcony5 from "/public/IMG_5816.jpeg";
 
-import executiveBalcony from "@/assets/room_1.jpeg";
-import executiveBalcony2 from "@/assets/room_2.jpeg";
-import executiveBalcony3 from "@/assets/room_3.jpeg";
-import executiveBalcony4 from "@/assets/room_4.jpeg";
-import executiveBalcony5 from "@/assets/room_5.jpeg";
+import executiveBalcony from "/public/room_1.jpeg";
+import executiveBalcony2 from "/public/room_2.jpeg";
+import executiveBalcony3 from "/public/room_3.jpeg";
+import executiveBalcony4 from "/public/room_4.jpeg";
+import executiveBalcony5 from "/public/room_5.jpeg";
 
-import familyBalcony from "@/assets/room_4.jpeg";
-import familyBalcony2 from "@/assets/room_2.jpeg";
-import familyBalcony3 from "@/assets/room_3.jpeg";
-import familyBalcony4 from "@/assets/room_1.jpeg";
-import familyBalcony5 from "@/assets/room_5.jpeg";
+import familyBalcony from "/public/room_4.jpeg";
+import familyBalcony2 from "/public/room_2.jpeg";
+import familyBalcony3 from "/public/room_3.jpeg";
+import familyBalcony4 from "/public/room_1.jpeg";
+import familyBalcony5 from "/public/room_5.jpeg";
 
-import presidentialBalcony from "@/assets/hero_3.jpeg";
+import presidentialBalcony from "/public/hero_3.jpeg";
 
 
 import RoomCarousel from "@/components/RoomCarousel";
